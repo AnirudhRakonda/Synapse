@@ -37,7 +37,7 @@ const Feed = () => {
             tags: ['java', 'backend', 'fintech'],
             date: 'Nov 04',
             readTime: '6m read time',
-            image: 'https://placehold.co/300x200',
+            image: 'https://app.daily.dev/posts/1500-free-html-website-templates-on-htmlrev-5z17qqtkd',
             likes: '9',
             comments: '0',
             shares: '0'
@@ -48,7 +48,7 @@ const Feed = () => {
             tags: ['career', 'architecture', '+2'],
             date: 'Nov 01',
             readTime: '4m read time',
-            image: 'https://placehold.co/300x200',
+            image: 'https://app.daily.dev/posts/python-3-13-cool-new-features-for-you-to-try-real-python-9pdsakjwv',
             likes: '27',
             comments: '0',
             shares: '0'
@@ -59,7 +59,7 @@ const Feed = () => {
             tags: ['career', 'architecture', '+2'],
             date: 'Nov 01',
             readTime: '',
-            image: 'https://placehold.co/300x200',
+            image: 'https://app.daily.dev/posts/optimizing-node-js-performance-tips-and-tricks-zrt2huurn',
             likes: '0',
             comments: '0',
             shares: '0'
@@ -70,7 +70,7 @@ const Feed = () => {
             tags: ['career', 'architecture', '+2'],
             date: 'Nov 01',
             readTime: '4m read time',
-            image: 'https://placehold.co/300x200',
+            image: 'https://app.daily.dev/posts/auth-js-adoption-guide-overview-examples-and-alternatives-o9zxm5rtk',
             likes: '27',
             comments: '0',
             shares: '0'
@@ -81,7 +81,7 @@ const Feed = () => {
             tags: ['career', 'architecture', '+2'],
             date: 'Nov 01',
             readTime: '4m read time',
-            image: 'https://placehold.co/300x200',
+            image: 'https://app.daily.dev/posts/shd6kubet',
             likes: '27',
             comments: '0',
             shares: '0'
@@ -92,7 +92,7 @@ const Feed = () => {
             tags: ['career', 'architecture', '+2'],
             date: 'Nov 01',
             readTime: '4m read time',
-            image: 'https://placehold.co/300x200',
+            image: 'https://api.daily.dev/r/kjXPT0WvS',
             likes: '27',
             comments: '0',
             shares: '0'

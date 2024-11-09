@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <div className="fixed top-0 left-0 h-full w-48 bg-navBar text-textColor flex flex-col justify-start items-center p-4" style={{ zIndex: 1000 }}>
       <div className="mb-8 mt-4">
-        <img src="/logo.png" alt="Synapse Logo" className="w-20 h-20" style={{ filter: 'invert(1)' }} />
+        <img src="/logo.png" alt="Synapse Logo" className=" mt-[-30px] mb-[-30px] w-20.5 h-20.5" style={{ filter: 'invert(1)' }} />
       </div>
       <ul className="space-y-2 mb-4">
         <li>

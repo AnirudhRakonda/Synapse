@@ -18,6 +18,7 @@ function MainContent() {
                 <ActivityHours />
                 <Performance />
                 <Profile />
+                <Rewards/>
             </div>
             <UpcomingSubmission />
             <CommunityGroups />
@@ -27,19 +28,16 @@ function MainContent() {
 
 function Header() {
     return (
-        <div className="flex justify-between items-center mb-6">
-            <div>
-                <h1 className="text-4xl text-white font-bold">Hello Siddharth ,</h1>
-                <p className="text-gray-500">Let's learn something new today!</p>
-            </div>
-            <div className="flex items-center">
-                <div className="relative mr-4">
-                    <input type="text" placeholder="Search" className="border rounded-full py-2 px-4 pl-10" />
-                    <i className="fas fa-search absolute left-3 top-2.5 text-gray-400"></i>
-                </div>
-                <i className="fas fa-bell text-gray-400"></i>
-            </div>
+      <div className="flex justify-between items-center mb-6">
+        <div>
+          <h1 className="text-4xl text-white font-bold">Hello Siddharth ,</h1>
+          <p className="text-gray-500">Let's learn something new today!</p>
         </div>
+        <div className="flex items-center">
+          <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile" className="w-12 h-12 rounded-full" />
+          <i className="fas fa-bell text-gray-400 ml-4"></i>
+        </div>
+      </div>
     );
 }
 
@@ -102,7 +100,7 @@ function Performance() {
             </div>
             <div className="flex justify-center items-center mb-4">
                 <div className="relative">
-                    <div className="w-32 h-32 rounded-full border-8 border-gray-200"></div>
+                    <div className="w-32 h-32 rounded-full border-8 border-red-200"></div>
                     <div className="absolute inset-0 flex justify-center items-center">
                         <p className="text-2xl font-bold">9.301</p>
                     </div>
@@ -115,32 +113,51 @@ function Performance() {
 
 function Profile() {
     return (
-        <div className="bg-white p-4 rounded-lg shadow">
-            <div className="flex items-center mb-4">
-                <img src="https://placehold.co/50x50" alt="Profile" className="w-12 h-12 rounded-full mr-4" />
-                <div>
-                    <p className="font-semibold">Siddhartha </p>
-                    <p className="text-gray-500">Student</p>
-                </div>
-            </div>
-            <div className="bg-gray-100 p-4 rounded-lg text-center">
-                <p className="mb-2">December 2021</p>
-                <div className="flex justify-between">
-                    {['24', '25', '26', '27', '28', '29', '30'].map((day, index) => (
-                        <div key={index} className={`w-8 h-8 flex justify-center items-center rounded-full ${day === '25' ? 'bg-black text-white' : 'bg-white text-black'}`}>
-                            {day}
-                        </div>
-                    ))}
-                </div>
-            </div>
+      <div className="bg-white p-4 rounded-lg shadow">
+        <div className="flex items-center mb-4">
+          <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile" className="w-12 h-12 rounded-full mr-4" />
+          <div>
+            <p className="font-semibold">Siddhartha</p>
+            <p className="text-gray-500">Student</p>
+          </div>
         </div>
+        <div className="bg-gray-100 p-4 rounded-lg text-center">
+          <p className="mb-2">December 2021</p>
+          <div className="flex justify-between">
+            {['24', '25', '26', '27', '28', '29', '30'].map((day, index) => (
+              <div key={index} className={`w-8 h-8 flex justify-center items-center rounded-full ${day === '25' ? 'bg-black text-white' : 'bg-white text-black'}`}>
+                {day}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     );
+}
+function Rewards() {
+  return (
+    <div className="bg-white p-4 rounded-lg shadow mt-4">
+      <h2 className="text-lg font-semibold mb-4">Rewards</h2>
+      <div className="flex justify-between items-center mb-4">
+        <p className="text-gray-500">Total Points</p>
+        <p className="text-2xl font-bold text-blue-500">1200</p>
+      </div>
+      <div className="flex justify-between items-center mb-4">
+        <p className="text-gray-500">Redeemed Points</p>
+        <p className="text-2xl font-bold text-green-500">800</p>
+      </div>
+      <div className="flex justify-between items-center">
+        <p className="text-gray-500">Available Points</p>
+        <p className="text-2xl font-bold text-orange-500">400</p>
+      </div>
+    </div>
+  );
 }
 
 function UpcomingSubmission() {
     return (
         <div className="bg-white p-4 rounded-lg shadow mt-6">
-            <h2 className="text-lg font-semibold mb-4">Upcoming Dounts</h2>
+            <h2 className="text-lg font-semibold mb-4">Upcoming Douts</h2>
             <div className="flex justify-between items-center">
                 <div className="flex items-center">
                     <img src="https://placehold.co/40x40" alt="Task" className="w-10 h-10 mr-4" />
