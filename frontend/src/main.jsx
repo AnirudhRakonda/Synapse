@@ -17,11 +17,13 @@ import Quiz from './pages/Quiz';
 import Feed from './pages/Feed';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import Landing from './pages/Landing';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
+    {/* <Landing></Landing> */}
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<App/>} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
       {/* Routes after login */}
