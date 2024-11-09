@@ -12,6 +12,7 @@ export default {
         active: '#5572CA',
         secondary: '#44527F',
         cta: '#5572CA',
+        navBar: '#363535',
       },
     },
   },

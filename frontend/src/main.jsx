@@ -8,6 +8,9 @@ import App from './App';
 import PrivateLayout from './PrivateLayout';
 import Dashboard from './pages/Dashboard';
 import VideoChat from './pages/VideoChat';
+import StudyWithMe from './pages/StudyWithMe';
+import Teaching from './pages/Teaching';
+import Connect from './pages/Connect';
 import Resources from './pages/Resources';
 import Messages from './pages/Messages';
 import Groups from './pages/Groups';
@@ -35,14 +38,18 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           </PrivateLayout>
         }
       />
-      <Route
-        path="/video-chat"
-        element={
-          <PrivateLayout>
-            <VideoChat />
-          </PrivateLayout>
-        }
-      />
+       <Route
+          path="/video-chat"
+          element={
+            <PrivateLayout>
+              <VideoChat />
+            </PrivateLayout>
+          }
+        >
+          <Route path="connect" element={<Connect />} />
+          <Route path="studywithme" element={<StudyWithMe />} />
+          <Route path="teaching" element={<Teaching />} />
+        </Route>
       <Route
         path="/resources"
         element={
