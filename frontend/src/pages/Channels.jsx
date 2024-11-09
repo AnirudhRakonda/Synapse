@@ -1,8 +1,10 @@
 import React from 'react'
-
+import Navbar from '../components/Navbar'
 const Channels = () => {
-  return (
-    <div>Channels</div>
+  return (<>
+  <Navbar/>
+  <div>Channels</div>
+  </>
   )
 }
 
