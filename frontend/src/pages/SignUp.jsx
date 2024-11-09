@@ -1,6 +1,5 @@
-// SignUp.jsx
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function SignUp() {
   const [formData, setFormData] = useState({
@@ -9,6 +8,8 @@ function SignUp() {
     password: '',
     confirmPassword: '',
   });
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,8 +18,33 @@ function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add form validation and submit logic here
-    console.log(formData);
+
+    // Basic validation
+    if (formData.password !== formData.confirmPassword) {
+      setErrorMessage('Passwords do not match');
+      return;
+    }
+
+    // Check if the email already exists in localStorage
+    const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+
+    if (existingUsers.some(user => user.email === formData.email)) {
+      setErrorMessage('User already exists');
+      return;
+    }
+
+    // Add the new user to the users array
+    existingUsers.push({
+      email: formData.email,
+      username: formData.username,
+      password: formData.password,
+    });
+
+    // Store updated users list in localStorage
+    localStorage.setItem('users', JSON.stringify(existingUsers));
+
+    // Redirect to login page
+    navigate('/signin');
   };
 
   return (
@@ -84,6 +110,9 @@ function SignUp() {
             className="w-full p-2 rounded bg-primary text-textColor border border-active focus:outline-none focus:border-cta"
           />
         </div>
+
+        {/* Show error message if there is one */}
+        {errorMessage && <p className="text-red-500 text-sm">{errorMessage}</p>}
 
         <button type="submit" className="w-full p-2 bg-cta text-white rounded font-semibold hover:bg-active transition-colors">
           Sign Up

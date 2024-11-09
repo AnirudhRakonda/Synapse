@@ -1,12 +1,13 @@
-// SignIn.jsx
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function SignIn() {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,8 +16,21 @@ function SignIn() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add form validation and submit logic here
-    console.log(formData);
+
+    // Retrieve stored users from localStorage
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Find the user that matches the entered email and password
+    const user = users.find(
+      (user) => user.email === formData.email && user.password === formData.password
+    );
+
+    if (user) {
+      // If user found, redirect to the dashboard
+      navigate('/dashboard');
+    } else {
+      setErrorMessage('Invalid email or password');
+    }
   };
 
   return (
@@ -53,16 +67,12 @@ function SignIn() {
           />
         </div>
 
+        {/* Show error message if there is one */}
+        {errorMessage && <p className="text-red-500 text-sm">{errorMessage}</p>}
+
         <button type="submit" className="w-full p-2 bg-cta text-white rounded font-semibold hover:bg-active transition-colors">
           Sign In
         </button>
-
-        <p className="text-center text-sm text-textColor mt-4">
-          Don’t have an account?{' '}
-          <Link to="/signup" className="text-cta hover:text-active transition-colors">
-            Sign Up
-          </Link>
-        </p>
       </form>
     </div>
   );
