@@ -56,28 +56,30 @@ const Discussions = () => {
   };
 
   return (
-    <div className="Discussions" style={{ padding: '20px' }}>
-      <h1>Doubt Forum</h1>
+    <div className="Discussions text-white" style={{ padding: '20px', color: '#000' }}>
+      <h1 style={{ color: '#fff' }}>Doubt Forum</h1>
       <div style={{ marginBottom: '10px' }}>
         <input
           type="text"
           placeholder="Enter your doubt..."
           value={newDoubt}
           onChange={(e) => setNewDoubt(e.target.value)}
-          style={{ padding: '8px', width: '300px', marginRight: '10px' }}
+          style={{ padding: '8px', width: '300px', marginRight: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
         />
-        <button onClick={addDoubt}>Add Doubt</button>
+        <button onClick={addDoubt} style={{ padding: '8px 16px', borderRadius: '4px', backgroundColor: '#007bff', color: '#fff', border: 'none' }}>
+          Add Doubt
+        </button>
       </div>
-      <h2>Posted Doubts</h2>
+      <h2 style={{ color: '#fff' }}>Posted Doubts</h2>
       <ul style={{ listStyleType: 'none', padding: 0 }}>
         {doubts.map((doubt) => (
-          <li key={doubt.id} style={{ marginBottom: '20px' }}>
-            <span style={{ fontWeight: 'bold' }}>{doubt.text}</span>
+          <li key={doubt.id} style={{ marginBottom: '20px', backgroundColor: '#f8f9fa', padding: '10px', borderRadius: '4px' }}>
+            <span style={{ fontWeight: 'bold', color: '#000' }}>{doubt.text}</span>
             <span style={{ color: doubt.solved ? 'green' : 'red', marginLeft: '10px' }}>
               {doubt.solved ? '(Solved)' : '(Unsolved)'}
             </span>
             {!doubt.solved && (
-              <button onClick={() => startSolvingDoubt(doubt.id)} style={{ marginLeft: '10px' }}>
+              <button onClick={() => startSolvingDoubt(doubt.id)} style={{ marginLeft: '10px', padding: '5px 10px', borderRadius: '4px', backgroundColor: '#28a745', color: '#fff', border: 'none' }}>
                 Solve
               </button>
             )}
@@ -87,17 +89,17 @@ const Discussions = () => {
                   placeholder="Enter your solution..."
                   value={solutionText}
                   onChange={(e) => setSolutionText(e.target.value)}
-                  style={{ width: '100%', padding: '8px' }}
+                  style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
                 />
-                <button onClick={() => submitSolution(doubt.id)} style={{ marginTop: '5px' }}>
+                <button onClick={() => submitSolution(doubt.id)} style={{ marginTop: '5px', padding: '8px 16px', borderRadius: '4px', backgroundColor: '#007bff', color: '#fff', border: 'none' }}>
                   Submit Solution
                 </button>
               </div>
             )}
             {doubt.solved && doubt.solution && (
               <div style={{ marginTop: '10px', paddingLeft: '20px', borderLeft: '2px solid #ccc' }}>
-                <p><strong>Solution:</strong> {doubt.solution.text}</p>
-                <p><em>Solved by: {doubt.solution.solvedBy}</em></p>
+                <p style={{ color: '#000' }}><strong>Solution:</strong> {doubt.solution.text}</p>
+                <p style={{ color: '#000' }}><em>Solved by: {doubt.solution.solvedBy}</em></p>
               </div>
             )}
           </li>

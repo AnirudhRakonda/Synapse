@@ -1,16 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
-import { FaTachometerAlt, FaSignOutAlt,FaVideo, FaBook, FaEnvelope, FaUsers, FaHashtag, FaComments, FaClipboardList, FaRss } from 'react-icons/fa'; // Import icons
+import { FaTachometerAlt, FaSignOutAlt, FaVideo, FaBook, FaEnvelope, FaUsers, FaHashtag, FaComments, FaClipboardList, FaRss } from 'react-icons/fa'; // Import icons
 
 function Navbar() {
   return (
-    
-    <div className="fixed top-0 left-0 h-full w-48 bg-navBar text-textColor flex flex-col justify-center items-center p-4">
-       {/* <div className="mb-8 ">
-        <img src="/logo.png" alt="Logo" className="h-12 w-auto 	fill-slate-200" />
-      </div> */}
-      <ul className="space-y-4">
+    <div className="fixed top-0 left-0 h-full w-48 bg-navBar text-textColor flex flex-col justify-start items-center p-4" style={{ zIndex: 1000 }}>
+      <div className="mb-8 mt-4">
+        <img src="/logo.png" alt="Synapse Logo" className="w-20 h-20" style={{ filter: 'invert(1)' }} />
+      </div>
+      <ul className="space-y-2 mb-4">
         <li>
           <NavLink
             to="/dashboard"
