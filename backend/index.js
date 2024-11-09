@@ -4,7 +4,7 @@ const cors = require('cors');
 const doubtsRouter = require('./doubts'); // Import the doubts route module
 
 const app = express();
-const PORT = 5000;
+const PORT = 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

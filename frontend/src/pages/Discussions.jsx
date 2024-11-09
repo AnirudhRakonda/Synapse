@@ -17,7 +17,7 @@ const Discussions = () => {
   // Fetch all doubts from the backend
   const fetchDoubts = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/doubts/getDoubts');
+      const response = await axios.get('http://localhost:3000/doubts/getDoubts');
       setDoubts(response.data);
     } catch (error) {
       console.error('Error fetching doubts:', error);
@@ -28,7 +28,7 @@ const Discussions = () => {
   const addDoubt = async () => {
     if (!newDoubt) return;
     try {
-      await axios.post('http://localhost:5000/doubts/addDoubt', { userId, text: newDoubt });
+      await axios.post('http://localhost:3000/doubts/addDoubt', { userId, text: newDoubt });
       setNewDoubt('');
       fetchDoubts();
     } catch (error) {
@@ -46,7 +46,7 @@ const Discussions = () => {
   const submitSolution = async (doubtId) => {
     if (!solutionText) return;
     try {
-      await axios.post('http://localhost:5000/doubts/solveDoubt', { doubtId, solution: solutionText, userName });
+      await axios.post('http://localhost:3000/doubts/solveDoubt', { doubtId, solution: solutionText, userName });
       setSolvingDoubtId(null);
       setSolutionText('');
       fetchDoubts();
