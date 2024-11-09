@@ -8,5 +8,4 @@ const Groups = () => {
     </div>
   )
 }
-
 export default Groups
