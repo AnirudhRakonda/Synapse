@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import './index.css'
 import App from './App';
+import PrivateLayout from './PrivateLayout';
 import Dashboard from './pages/Dashboard';
 import VideoChat from './pages/VideoChat';
 import Resources from './pages/Resources';
@@ -19,20 +20,83 @@ import SignUp from './pages/SignUp';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
-    <App>
-      <Routes>
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/video-chat" element={<VideoChat />} />
-        <Route path="/resources" element={<Resources />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/groups" element={<Groups />} />
-        <Route path="/channels" element={<Channels />} />
-        <Route path="/discussion" element={<Discussion />} />
-        <Route path="/quiz" element={<Quiz />} />
-        <Route path="/feed" element={<Feed />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-      </Routes>
-    </App>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signup" element={<SignUp />} />
+      {/* Routes after login */}
+      <Route
+        path="/dashboard"
+        element={
+          <PrivateLayout>
+            <Dashboard />
+          </PrivateLayout>
+        }
+      />
+      <Route
+        path="/video-chat"
+        element={
+          <PrivateLayout>
+            <VideoChat />
+          </PrivateLayout>
+        }
+      />
+      <Route
+        path="/resources"
+        element={
+          <PrivateLayout>
+            <Resources />
+          </PrivateLayout>
+        }
+      />
+      <Route
+        path="/messages"
+        element={
+          <PrivateLayout>
+            <Messages />
+          </PrivateLayout>
+        }
+      />
+      <Route
+        path="/groups"
+        element={
+          <PrivateLayout>
+            <Groups />
+          </PrivateLayout>
+        }
+      />
+      <Route
+        path="/channels"
+        element={
+          <PrivateLayout>
+            <Channels />
+          </PrivateLayout>
+        }
+      />
+      <Route
+        path="/discussion"
+        element={
+          <PrivateLayout>
+            <Discussion />
+          </PrivateLayout>
+        }
+      />
+      <Route
+        path="/quiz"
+        element={
+          <PrivateLayout>
+            <Quiz />
+          </PrivateLayout>
+        }
+      />
+      <Route
+        path="/feed"
+        element={
+          <PrivateLayout>
+            <Feed />
+          </PrivateLayout>
+        }
+      />
+    </Routes>
   </Router>
 );
