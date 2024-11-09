@@ -21,7 +21,7 @@ import Landing from './pages/Landing';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
-    {/* <Landing></Landing> */}
+
     <Routes>
       <Route path="/" element={<App/>} />
       <Route path="/signin" element={<SignIn />} />
