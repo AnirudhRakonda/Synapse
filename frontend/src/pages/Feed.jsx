@@ -55,9 +55,9 @@ const Feed = () => {
         },
         {
             icon: 'fa-compass',
-            title: 'Explore tags and sources like never before',
-            tags: [],
-            date: '',
+            title: 'Explore tags and sources like never before and use them to your advantage',
+            tags: ['career', 'architecture', '+2'],
+            date: 'Nov 01',
             readTime: '',
             image: 'https://placehold.co/300x200',
             likes: '0',
@@ -146,8 +146,7 @@ const Feed = () => {
             </div>
 
             {/* My Feed Section */}
-            <div className="w-full max-w-4xl px-6">
-                <h2 className="text-2xl font-semibold mb-8">My Feed</h2>
+            <div className="w-full max-w-6xl px-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
                     {initialPosts.map((post, index) => (
                         <Card key={index} {...post} />
