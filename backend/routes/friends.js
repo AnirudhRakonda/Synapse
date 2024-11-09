@@ -99,7 +99,7 @@ router.get('/getFriendRequestsReceived', verifyToken, async (req, res) => {
 });
 
 // Route: Get Friends List
-router.get('/getFriendsList', verifyToken, async (req, res) => {
+router.get('/getFriendsList', async (req, res) => {
     const { userId } = req.query;
     if (!userId) {
         return res.status(400).json({ error: 'userId is required' });
