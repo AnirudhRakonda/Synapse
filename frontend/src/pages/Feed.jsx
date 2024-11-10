@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Card = ({ icon, title, tags, date, readTime, image, likes, comments, shares }) => (
-    <div className="bg-gray-800 rounded-lg p-6 m-4 w-full sm:w-80">
+    <div className="bg-[#1E1E1E] rounded-lg p-6 m-4 w-full sm:w-80">
         <div className="flex items-center mb-4">
             <div className="bg-purple-600 p-3 rounded-full">
                 <i className={`fas ${icon} text-white`}></i>
